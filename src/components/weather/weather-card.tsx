@@ -54,7 +54,7 @@ export const WeatherCard = (props: any) => {
                     </div>
                     <div className='weather-stats'>
                         <div>
-                            {iconGenerator(data.icon, 60, isDay)}
+                            {iconGenerator(data.icon, 50, isDay)}
                             <div className="date">{currentDate}</div>
                         </div>
                         <div>
