@@ -8,6 +8,8 @@ function App() {
   return (
     <div className="App">
       <WeatherCard locationName="Lake Norman" location="28031"></WeatherCard>
+      <WeatherCard locationName="Lake Wylie" location="29710"></WeatherCard>
+
     </div>
   );
 }

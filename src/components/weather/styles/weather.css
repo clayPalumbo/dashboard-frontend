@@ -1,7 +1,8 @@
-.weather-card {
+.weather-card-day {
     display: flex;
-    background: linear-gradient(90deg, rgba(0,116,255,1) 0%, rgba(59,140,196,1) 32%, rgba(0,138,190,1) 66%, rgba(53,221,255,1) 100%);    
+    background: linear-gradient(45deg, rgba(0,116,255,1) 0%, rgba(59,140,196,1) 32%, rgba(0,138,190,1) 66%, rgba(53,221,255,1) 100%);    
     max-width: 450px;
+    min-width: 400px;
     border-radius: 40px;
     flex-direction: column;
     margin: 20px;
@@ -9,10 +10,38 @@
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.12);
 }
 
-.weather-card-skel {
+.weather-card-skel-day {
     display: flex;
-    background: linear-gradient(90deg, rgba(0,116,255,1) 0%, rgba(59,140,196,1) 32%, rgba(0,138,190,1) 66%, rgba(53,221,255,1) 100%);    
+    background: linear-gradient(45deg, rgba(0,116,255,1) 0%, rgba(59,140,196,1) 32%, rgba(0,138,190,1) 66%, rgba(53,221,255,1) 100%);    
     max-width: 450px;
+    min-width: 400px;
+    height: 285.5397644042969px;
+    border-radius: 40px;
+    flex-direction: column;
+    margin: 20px;
+    color: #ffffff;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.12);
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-card-night {
+    display: flex;
+    background: linear-gradient(45deg, rgba(75,75,75,1) 0%, rgba(87,87,87,1) 32%, rgba(34,34,34,1) 66%, rgba(45,45,45,1) 100%);
+    max-width: 450px;
+    min-width: 400px;
+    border-radius: 40px;
+    flex-direction: column;
+    margin: 20px;
+    color: #ffffff;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.12);
+}
+
+.weather-card-skel-night {
+    display: flex;
+    background: linear-gradient(45deg, rgba(75,75,75,1) 0%, rgba(87,87,87,1) 32%, rgba(34,34,34,1) 66%, rgba(45,45,45,1) 100%);
+    max-width: 450px;
+    min-width: 400px;
     height: 285.5397644042969px;
     border-radius: 40px;
     flex-direction: column;
@@ -50,8 +79,18 @@
 
 .forecast {
     display: flex;
-    justify-content: center;
-    padding: 10px;
+    justify-content: space-evenly;
+    padding: 10px 10px 20px;
+}
+
+.forecast-time {
+    font-size: 12px;
+    color: rgb(225 225 225);
+    font-weight: bold;
+}
+
+.forecast-temp {
+    font-weight: bold;
 }
 
 .location {
@@ -60,18 +99,18 @@
 
 .location-box {
     display: flex;
-    padding: 5px 10px;
+    padding: 2px 8px;
     align-items: center;
     background: rgb(0 0 0 / 26%);
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 14px;
     margin: 10px;
 }
 
 /* Make uv color variable */
 .uv-box {
     display: flex;
-    padding: 5px 10px;
+    padding: 2px 8px;
     align-items: center;
     background: rgb(0 208 28);
     border-radius: 20px;

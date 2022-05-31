@@ -12,6 +12,9 @@ code {
     monospace;
 }
 
-/* .App {
-  background-color: aqua;
-} */
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
+}

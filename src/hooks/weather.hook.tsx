@@ -6,9 +6,6 @@ import {
   
 
   export const getWeather = async (options: {location: number;}) => {
-    // const response = await fetch(
-    //     `http://api.weatherapi.com/v1/forecast.json?key=4372bc2acb21401d89e203657222405&q=${options.location}&days=1&aqi=no&alerts=no`
-    //   );
     const response = await fetch(`https://0jedkr91m6.execute-api.us-east-1.amazonaws.com/dev/weather?location=${options.location}`);
     const data = await response.json();    
     return data;
