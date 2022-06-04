@@ -10,3 +10,9 @@ export const getTimeOfDay = (hour: number): string => {
     return "PM";
   }
 };
+
+export const getUvColor = (uv: number) => {
+  if (uv < 5) return "green";
+  else if (uv < 8) return "orange";
+  else return "red";
+};
