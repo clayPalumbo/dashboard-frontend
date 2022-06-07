@@ -11,6 +11,7 @@ import {
 import { Line } from "react-chartjs-2";
 
 export const LineChart = (props: any) => {
+
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -20,20 +21,20 @@ export const LineChart = (props: any) => {
     Tooltip,
     Legend
   );
-  const DATA_COUNT = 12;
+  
+  const datapoints = [0, 20, 20, 60, 40];
   const labels = [];
-  for (let i = 0; i < DATA_COUNT; ++i) {
+  for (let i = 0; i < datapoints.length; ++i) {
     labels.push(i.toString());
   }
-  const datapoints = [0, 20, 20, 60, 60, 120, 90, 180, 120, 125, 105, 110, 170];
   const data = {
     labels: labels,
     datasets: [
       {
         data: datapoints,
-        borderColor: "rgb(0, 106, 192)",
+        borderColor: "rgb(20 233 0)",
         fill: false,
-        tension: 0.4,
+        tension: 0.6,
       },
     ],
   };
@@ -42,7 +43,7 @@ export const LineChart = (props: any) => {
       legend: {
         display: false,
       },
-    },
+    }, 
     scales: {
       xAxis: {
         display: false,
@@ -50,6 +51,9 @@ export const LineChart = (props: any) => {
       yAxis: {
         display: false,
       },
+      title: {
+        display: false
+      }
     },
   };
 

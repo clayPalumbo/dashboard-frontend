@@ -30,7 +30,7 @@ export const WeatherCard = (props: any) => {
   const currentTemp = Math.floor(data?.forecast?.nextFewHours?.[0]?.temp);
   const currentDate = formatDate(date);
 
-  const dayNight = getSunset(date.getHours() - 9);
+  const dayNight = getSunset(date.getHours());
   const isDay = date.getHours() < 20;
 
   if (isLoading) {
