@@ -7,13 +7,15 @@
     rgba(0, 138, 190, 1) 66%,
     rgba(53, 221, 255, 1) 100%
   );
+  background-size: 400% 400%;
   max-width: 450px;
   min-width: 400px;
-  border-radius: 40px;
   flex-direction: column;
-  margin: 20px;
   color: #ffffff;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.12);
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
 }
 
 .weather-card-skel-day {
@@ -25,12 +27,11 @@
     rgba(0, 138, 190, 1) 66%,
     rgba(53, 221, 255, 1) 100%
   );
+  background-size: 400% 400%;
   max-width: 450px;
   min-width: 400px;
   height: 285.5397644042969px;
-  border-radius: 40px;
   flex-direction: column;
-  margin: 20px;
   color: #ffffff;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.12);
   align-items: center;
@@ -46,13 +47,14 @@
     rgba(34, 34, 34, 1) 66%,
     rgba(45, 45, 45, 1) 100%
   );
+  background-size: 400% 400%;
   max-width: 450px;
   min-width: 400px;
-  border-radius: 40px;
   flex-direction: column;
-  margin: 20px;
   color: #ffffff;
-  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.12);
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
 }
 
 .weather-card-skel-night {
@@ -67,9 +69,7 @@
   max-width: 450px;
   min-width: 400px;
   height: 285.5397644042969px;
-  border-radius: 40px;
   flex-direction: column;
-  margin: 20px;
   color: #ffffff;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.12);
   align-items: center;
@@ -156,4 +156,40 @@
 
 .weather-wind {
   font-size: 16px;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

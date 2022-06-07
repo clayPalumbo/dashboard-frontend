@@ -1,0 +1,77 @@
+.dashboard {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: linear-gradient(
+    -45deg,
+    rgb(255, 255, 255),
+    rgb(202, 255, 255),
+    rgb(218, 218, 218),
+    rgb(97, 205, 255)
+  );
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+
+  //   &-sidebar {
+  //     background: linear-gradient(
+  //         45deg,
+  //         rgba(75, 75, 75, 1) 0%,
+  //         rgba(87, 87, 87, 1) 32%,
+  //         rgba(34, 34, 34, 1) 66%,
+  //         rgba(45, 45, 45, 1) 100%
+  //       );
+  //     width: 60px;
+  //      height: 100%;
+  //   }
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
+
+  &-title {
+    color: #000;
+    padding-left: 20px;
+  }
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

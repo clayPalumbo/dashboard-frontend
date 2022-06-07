@@ -6,12 +6,17 @@ import "./styles/weather.css";
 import { iconGenerator } from "./common/icon-generator";
 import { getSunset, getTimeOfDay } from "./common/utils";
 // uncomment to use sample data (saves on api calls while testing)
-// import { data } from '../../sampleData/weather-data';
+import { data } from "../../sampleData/weather-data";
 import { UvIndex } from "./common/uv-index";
+import { Card } from "../common/Card";
 
 export const WeatherCard = (props: any) => {
   const { location, locationName } = props;
-  const { isLoading, data, execute } = useGetWeather();
+  const {
+    isLoading,
+    // data,
+    execute,
+  } = useGetWeather();
 
   useEffect(() => {
     try {
@@ -25,18 +30,18 @@ export const WeatherCard = (props: any) => {
   const currentTemp = Math.floor(data?.forecast?.nextFewHours?.[0]?.temp);
   const currentDate = formatDate(date);
 
-  const dayNight = getSunset(date.getHours());
+  const dayNight = getSunset(date.getHours() - 9);
   const isDay = date.getHours() < 20;
 
   if (isLoading) {
     return (
-      <>
+      <Card>
         <div className={`weather-card-skel-${dayNight}`}>Page is loading</div>
-      </>
+      </Card>
     );
   }
   return (
-    <>
+    <Card>
       {data && (
         <div className={`weather-card-${dayNight}`}>
           <div className="weather-overview">
@@ -85,6 +90,6 @@ export const WeatherCard = (props: any) => {
           </div>
         </div>
       )}
-    </>
+    </Card>
   );
 };
