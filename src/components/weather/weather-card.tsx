@@ -6,28 +6,26 @@ import "./styles/weather.css";
 import { iconGenerator } from "./common/icon-generator";
 import { getSunset, getTimeOfDay } from "./common/utils";
 // uncomment to use sample data (saves on api calls while testing)
-import { data } from "../../sampleData/weather-data";
+// import { data } from "../../sampleData/weather-data";
 import { UvIndex } from "./common/uv-index";
 import { Card } from "../common/Card";
 
 export const WeatherCard = (props: any) => {
   const { location, locationName } = props;
-  const {
-    isLoading,
-    // data,
-    execute,
-  } = useGetWeather();
+  const { isLoading, weatherData, execute } = useGetWeather();
 
-  //   useEffect(() => {
-  //     try {
-  //       execute({ location });
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   }, [execute]);
+  useEffect(() => {
+    try {
+      execute({ location });
+    } catch (err) {
+      console.log(err);
+    }
+  }, [execute]);
 
   const date = new Date();
-  const currentTemp = Math.floor(data?.forecast?.nextFewHours?.[0]?.temp);
+  const currentTemp = Math.floor(
+    weatherData?.forecast?.nextFewHours?.[0]?.temp
+  );
   const currentDate = formatDate(date);
 
   const dayNight = getSunset(date.getHours());
@@ -42,7 +40,7 @@ export const WeatherCard = (props: any) => {
   }
   return (
     <Card size="medium">
-      {data && (
+      {weatherData && (
         <div className={`weather-card-${dayNight}`}>
           <div className="weather-overview">
             <div className="location">
@@ -53,26 +51,26 @@ export const WeatherCard = (props: any) => {
             </div>
             <div className="weather-stats">
               <div>
-                {iconGenerator(data.icon, 50, isDay)}
+                {iconGenerator(weatherData.icon, 50, isDay)}
                 <div className="date">{currentDate}</div>
               </div>
               <div>
                 <div className="weather-temp">{currentTemp}°</div>
                 <div className="weather-high-low">
-                  {Math.floor(data.forecast.low)}/
-                  {Math.floor(data.forecast.high)}°
+                  {Math.floor(weatherData.forecast.low)}/
+                  {Math.floor(weatherData.forecast.high)}°
                 </div>
               </div>
               <div className="weather-stats-condition">
-                <UvIndex uv={data.uv} />
+                <UvIndex uv={weatherData.uv} />
                 <div className="weather-wind">
-                  {data.windDirection} {data.wind}mph
+                  {weatherData.windDirection} {weatherData.wind}mph
                 </div>
               </div>
             </div>
           </div>
           <div className="forecast">
-            {data.forecast.nextFewHours.map((hour: any, i: number) => {
+            {weatherData.forecast.nextFewHours.map((hour: any, i: number) => {
               const timeOfDay = new Date(hour.time * 1000).getHours();
               const standardTime = timeOfDay % 12 ? timeOfDay % 12 : 12;
               const time = standardTime + getTimeOfDay(timeOfDay);

@@ -68,7 +68,9 @@ export const EquityCard = ({ equities, title }: EquityCardInterface) => {
             equityPrice[equityPrice.length - 1].priceUsd
           );
           const map: Equity = {
-            name: equities[i].name,
+            name:
+              equities[i].name[0].toUpperCase() +
+              equities[i].name.slice(1, equities[i].name.length),
             image: equities[i].image,
             price: Number(equityPrice[0].priceUsd).toFixed(2),
             dailyChange: equityPrice.map((price: any) => price.priceUsd),
