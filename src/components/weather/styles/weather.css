@@ -5,13 +5,12 @@
     rgba(0, 115, 255, 0.542) 0%,
     rgba(59, 140, 196, 0.542) 32%,
     rgba(0, 138, 190, 0.542) 66%,
-    rgba(53, 221, 255, .7) 100%
+    rgba(53, 221, 255, 0.7) 100%
   );
   background-size: 400% 400%;
-  max-width: 450px;
-  min-width: 400px;
   flex-direction: column;
   color: #ffffff;
+  width: 100%;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.12);
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
@@ -28,8 +27,7 @@
     rgba(53, 221, 255, 0.7) 100%
   );
   background-size: 400% 400%;
-  max-width: 450px;
-  min-width: 400px;
+  width: 100%;
   height: 285.5397644042969px;
   flex-direction: column;
   color: #ffffff;
@@ -40,16 +38,9 @@
 
 .weather-card-night {
   display: flex;
-  background: linear-gradient(
-    45deg,
-    rgba(75, 75, 75, .5) 0%,
-    rgba(87, 87, 87, .5) 32%,
-    rgba(34, 34, 34, .5) 66%,
-    rgba(45, 45, 45, .7) 100%
-  );
+  background: rgb(0 0 0 / 61%);
   background-size: 400% 400%;
-  max-width: 450px;
-  min-width: 400px;
+  width: 100%;
   flex-direction: column;
   color: #ffffff;
   -webkit-animation: Gradient 15s ease infinite;
@@ -59,15 +50,8 @@
 
 .weather-card-skel-night {
   display: flex;
-  background: linear-gradient(
-    45deg,
-    rgba(75, 75, 75, .5) 0%,
-    rgba(87, 87, 87, .5) 32%,
-    rgba(34, 34, 34, .5) 66%,
-    rgba(45, 45, 45, .7) 100%
-  );
-  max-width: 450px;
-  min-width: 400px;
+  background: rgb(0 0 0 / 61%);
+  width: 100%;
   height: 285.5397644042969px;
   flex-direction: column;
   color: #ffffff;

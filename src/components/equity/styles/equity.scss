@@ -1,0 +1,75 @@
+.equity {
+  &-card {
+    display: flex;
+    flex-direction: column;
+    // background: rgb(0 0 0 / 61%);
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 50px;
+    background: #636363;
+    box-shadow: 20px 20px 60px #545454, -20px -20px 60px #727272;
+  }
+
+  &-title {
+    text-align: start;
+    font-size: 14px;
+    padding: 20px 0px 10px;
+    font-weight: bold;
+    color: rgb(207 207 207);
+  }
+
+  &-img {
+    height: 35px;
+  }
+
+  &-chart {
+    display: flex;
+    padding: 10px;
+    color: #fff;
+    justify-content: space-around;
+    margin: 5px 0;
+    // background: rgb(0 0 0 / 32%);
+    border-radius: 50px;
+    background: #636363;
+    box-shadow: inset 20px 20px 60px #545454, inset -20px -20px 60px #727272;
+    border-radius: 20px;
+    align-items: center;
+
+    &-overview {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+    }
+
+    &-currency {
+      font-weight: bold;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    &-price {
+      color: rgb(207, 207, 207);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    &-line {
+      width: 85px;
+    }
+
+    &-percent {
+      font-size: 12px;
+      font-weight: bold;
+
+      &-green {
+        color: rgb(17 189 0);
+      }
+
+      &-red {
+        color: rgb(251 95 95);
+      }
+    }
+  }
+}

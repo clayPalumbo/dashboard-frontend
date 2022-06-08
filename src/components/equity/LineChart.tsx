@@ -10,8 +10,13 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
-export const LineChart = (props: any) => {
+interface LineChartInterface {
+  data: any;
+  showX?: boolean;
+  showY?: boolean;
+}
 
+export const LineChart = ({ data, showX, showY }: LineChartInterface) => {
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -21,18 +26,18 @@ export const LineChart = (props: any) => {
     Tooltip,
     Legend
   );
-  
-  const datapoints = [0, 20, 20, 60, 40];
+  const color =
+    data[0] < data[data.length - 1] ? "rgb(20 233 0)" : "rgb(251 95 95)";
   const labels = [];
-  for (let i = 0; i < datapoints.length; ++i) {
+  for (let i = 0; i < data.length; ++i) {
     labels.push(i.toString());
   }
-  const data = {
+  const lineData = {
     labels: labels,
     datasets: [
       {
-        data: datapoints,
-        borderColor: "rgb(20 233 0)",
+        data: data,
+        borderColor: color,
         fill: false,
         tension: 0.6,
       },
@@ -43,19 +48,19 @@ export const LineChart = (props: any) => {
       legend: {
         display: false,
       },
-    }, 
+    },
     scales: {
       xAxis: {
-        display: false,
+        display: showX ?? false,
       },
       yAxis: {
-        display: false,
+        display: showY ?? false,
       },
       title: {
-        display: false
-      }
+        display: false,
+      },
     },
   };
 
-  return <Line data={data} options={options} />;
+  return <Line data={lineData} options={options} />;
 };

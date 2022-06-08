@@ -18,13 +18,13 @@ export const WeatherCard = (props: any) => {
     execute,
   } = useGetWeather();
 
-  useEffect(() => {
-    try {
-      execute({ location });
-    } catch (err) {
-      console.log(err);
-    }
-  }, [execute]);
+  //   useEffect(() => {
+  //     try {
+  //       execute({ location });
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   }, [execute]);
 
   const date = new Date();
   const currentTemp = Math.floor(data?.forecast?.nextFewHours?.[0]?.temp);
@@ -41,7 +41,7 @@ export const WeatherCard = (props: any) => {
     );
   }
   return (
-    <Card>
+    <Card size="medium">
       {data && (
         <div className={`weather-card-${dayNight}`}>
           <div className="weather-overview">
@@ -72,7 +72,7 @@ export const WeatherCard = (props: any) => {
             </div>
           </div>
           <div className="forecast">
-            {data.forecast.nextFewHours.map((hour: any) => {
+            {data.forecast.nextFewHours.map((hour: any, i: number) => {
               const timeOfDay = new Date(hour.time * 1000).getHours();
               const standardTime = timeOfDay % 12 ? timeOfDay % 12 : 12;
               const time = standardTime + getTimeOfDay(timeOfDay);
@@ -80,7 +80,7 @@ export const WeatherCard = (props: any) => {
               const isDay = timeOfDay < 20;
               const icon = iconGenerator(hour.condition, 35, isDay);
               return (
-                <div key={temp}>
+                <div key={temp + "-" + i}>
                   <div className="forecast-time">{time}</div>
                   {icon}
                   <div className="forecast-temp">{temp}</div>

@@ -11,16 +11,16 @@ export const getWeather = async (options: { location: number }) => {
 export const useGetWeather = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
-  const [data, setData] = useState<any>(null);
+  const [weatherData, setData] = useState<any>(null);
 
   const execute = async (options: { location: number }) => {
     try {
       setIsLoading(true);
-      const todos = await getWeather(options);
-      setData(todos);
+      const weather = await getWeather(options);
+      setData(weather);
       setIsLoading(false);
 
-      return todos;
+      return weather;
     } catch (e: any) {
       setError(e);
       setIsLoading(false);
@@ -31,7 +31,7 @@ export const useGetWeather = () => {
   return {
     isLoading,
     error,
-    data,
+    weatherData,
     execute: useCallback(execute, []), // to avoid infinite calls when inside a `useEffect`
   };
 };
