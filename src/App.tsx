@@ -1,14 +1,16 @@
-import React from "react";
-import logo from "./logo.svg";
+import { Route, Router } from "react-router-dom";
 import "./App.css";
-import { WeatherCard } from "./components/weather/weather-card";
 import { Dashboard } from "./pages/Dashboard";
 
-// TODO: Setup Linting
 function App() {
   return (
     <div className="App">
+      {/* TODO: Add navigation */}
+      {/* <Router location={""} navigator={Navigator}>
+        <Route path='/'> */}
       <Dashboard />
+      {/* </Route>
+      </Router> */}
     </div>
   );
 }

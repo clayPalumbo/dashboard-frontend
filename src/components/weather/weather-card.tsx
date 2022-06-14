@@ -6,13 +6,17 @@ import "./styles/weather.css";
 import { iconGenerator } from "./common/icon-generator";
 import { getSunset, getTimeOfDay } from "./common/utils";
 // uncomment to use sample data (saves on api calls while testing)
-// import { data } from "../../sampleData/weather-data";
+import { weatherData } from "../../sampleData/weather-data";
 import { UvIndex } from "./common/uv-index";
 import { Card } from "../common/Card";
 
 export const WeatherCard = (props: any) => {
   const { location, locationName } = props;
-  const { isLoading, weatherData, execute } = useGetWeather();
+  const {
+    isLoading,
+    // weatherData,
+    execute,
+  } = useGetWeather();
 
   useEffect(() => {
     try {

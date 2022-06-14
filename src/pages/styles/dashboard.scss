@@ -4,7 +4,6 @@
   height: 100%;
   color: #fff;
   background: #fff;
-  min-height: 100vh;
 
   &-container {
     display: flex;
@@ -12,47 +11,37 @@
     justify-content: center;
     width: 100%;
     background: #c7c7c7;
+    padding: 30px;
+    height: 100vh;
   }
 
-  &-sidebar {
-    background: #fff;
-    width: 60px;
+  &-row {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    height: 50%;
+    flex-wrap: wrap;
   }
 }
 
-.weather {
+.grid {
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 20px;
 
   &-title {
     color: #464646;
     padding-left: 20px;
     font-weight: bold;
   }
+
+  &-row {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .App-logo {
   pointer-events: none;
   padding: 10px;
-}
-
-.nav {
-  height: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  &-item {
-    &:hover {
-      background: rgb(195, 195, 195);
-    }
-  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

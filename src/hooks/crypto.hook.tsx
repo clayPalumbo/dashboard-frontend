@@ -46,10 +46,10 @@ export const useGetCrypto = (equities: Equities[]) => {
   const [error, setError] = useState<Error | null>(null);
   const [cryptoData, setData] = useState<any>(null);
 
-  const execute = async () => {
+  const execute = async ({interval, startTime}: {interval: string, startTime: number}) => {
     try {
       setIsLoading(true);
-      const data = await getCrypto(equities, 12, "h2");
+      const data = await getCrypto(equities, startTime, interval);
       setData(data);
       setIsLoading(false);
 

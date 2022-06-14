@@ -3,5 +3,7 @@ import "./styles/card.scss";
 
 export const Card = (props: any) => {
   const { size } = props;
-  return <div className={`card card-${size}`}>{props.children}</div>;
+  return (
+    <div className={`card card-${size ?? "medium"}`}>{props.children}</div>
+  );
 };

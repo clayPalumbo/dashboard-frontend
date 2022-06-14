@@ -1,4 +1,4 @@
-export const data = {
+export const weatherData = {
   condition: "Sunny",
   location: "Cornelius",
   feelsLike: 84.8,

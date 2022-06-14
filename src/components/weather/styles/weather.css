@@ -11,6 +11,7 @@
   flex-direction: column;
   color: #ffffff;
   width: 100%;
+  height: 100%;
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.12);
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
@@ -28,6 +29,7 @@
   );
   background-size: 400% 400%;
   width: 100%;
+  height: 100%;
   height: 285.5397644042969px;
   flex-direction: column;
   color: #ffffff;
@@ -38,9 +40,10 @@
 
 .weather-card-night {
   display: flex;
-  background: rgb(0 0 0 / 61%);
+  background: #242424;
   background-size: 400% 400%;
   width: 100%;
+  height: 100%;
   flex-direction: column;
   color: #ffffff;
   -webkit-animation: Gradient 15s ease infinite;
@@ -50,8 +53,9 @@
 
 .weather-card-skel-night {
   display: flex;
-  background: rgb(0 0 0 / 61%);
+  background: #242424;
   width: 100%;
+  height: 100%;
   height: 285.5397644042969px;
   flex-direction: column;
   color: #ffffff;

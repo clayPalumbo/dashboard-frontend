@@ -1,5 +1,5 @@
 import { BsSun } from "react-icons/bs";
-import "../styles/common/uv-index.scss";
+import "../styles/uv-index.scss";
 import { getUvColor } from "./utils";
 import React from "react";
 

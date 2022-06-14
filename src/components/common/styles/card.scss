@@ -7,9 +7,15 @@
   align-items: center;
   justify-content: center;
   color: #000;
+  height: 100%;
 
   &-medium {
     min-height: 200px;
+    min-width: 400px;
+  }
+
+  &-large {
+    min-height: 250px;
     min-width: 400px;
   }
 }
